@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-#
+
 require 'json'
 
 hash = nil
@@ -18,4 +18,4 @@ File.open('config.json', 'w') do |file|
   file.puts(JSON.pretty_generate(hash))
 end
 
-p hash['packageVersion']
+puts hash['packageVersion']

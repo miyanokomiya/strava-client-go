@@ -11,7 +11,7 @@ git add -N .
 set +e
 git diff --exit-code --quiet
 if [[ $? -eq 1 ]]; then
-  git checkout -b generate
+  git checkout -b generate/${VERSION}
   git add -A
   git commit -m "generate [ci skip]"
   git tag -a ${VERSION} -m ${VERSION}
