@@ -4,9 +4,11 @@ services:
 - docker
 
 script:
-- make generate
-- git checkout .travis.yml
-- bash ./push.sh
+- bash ./generate.sh
+
+branches:
+  only:
+    - master
 
 env:
   global:
