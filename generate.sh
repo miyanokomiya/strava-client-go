@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 VERSION=`ruby ./migrate.rb`
+echo generate:${VERSION}
 
 make generate
 git checkout .travis.yml
