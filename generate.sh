@@ -9,6 +9,7 @@ if [[ $? -eq 1 ]]; then
   echo generate:${VERSION}
   docker run --rm -v ${PWD}:/local openapitools/openapi-generator-cli generate -i /local/spec.json -g go -o /local -c /local/config.json --skip-validate-spec
   git checkout .travis.yml
+  sed -e "s/GIT_USER_ID/miyanokomiya/" -e "s/GIT_REPO_ID/strava-client-go/" go.mod > go.mod
   git add -A
   git commit -m "generate:${VERSION} [ci skip]"
   git tag -a ${VERSION} -m ${VERSION}
