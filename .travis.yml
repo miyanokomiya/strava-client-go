@@ -6,7 +6,7 @@ services:
 script:
 - make generate
 - git checkout .travis.yml
-- sh ./push.sh
+- bash ./push.sh
 
 env:
   global:
