@@ -14,7 +14,7 @@ if [[ $? -eq 1 ]]; then
   git checkout -b generate
   git add -A
   git commit -m "generate [ci skip]"
-  git tag -a ${VERSION}
+  git tag -a ${VERSION} -m ${VERSION}
   git push --quiet https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git master
   git push --quiet https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git --tags
 else
