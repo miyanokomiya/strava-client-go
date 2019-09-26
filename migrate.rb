@@ -8,8 +8,7 @@ File.open('config.json', 'r') do |file|
   hash = JSON.load(file)
   splited = hash['packageVersion']
             .split('.')
-            .map(&:to_i)
-  splited[2] = splited[2] + 1
+  splited[2] = (splited[2].to_i + 1).to_s
   version = splited.join('.')
   hash['packageVersion'] = version
 end
