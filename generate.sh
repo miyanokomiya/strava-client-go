@@ -10,8 +10,9 @@ if [[ $? -eq 1 ]]; then
   docker run --rm -v ${PWD}:/local swaggerapi/swagger-codegen-cli:2.4.8 generate -i /local/spec.json -l go -o /local -c /local/config.json
   git checkout .travis.yml
   sed -e "s/GIT_USER_ID/miyanokomiya/" -e "s/GIT_REPO_ID/strava-client-go/" go.mod > go.mod
-  cat ./README.md >> ./README_ADD.md
-  cp ./README_ADD.md ./README.md
+  cat README.md >> README_ADD.md
+  cp README_ADD.md README.md
+  git checkout README_ADD.md
   go get -d -v .
   go build -v ./
   git add -A
