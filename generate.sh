@@ -7,7 +7,7 @@ git diff spec.json --exit-code --quiet
 if [[ $? -eq 1 ]]; then
   VERSION=`ruby ./migrate.rb`
   echo generate:${VERSION}
-  docker run --rm -v ${PWD}:/local openapitools/openapi-generator-cli generate -i /local/spec.json -g go -o /local -c /local/config.json --skip-validate-spec
+  docker run --rm -v ${PWD}:/local swaggerapi/swagger-codegen-cli generate -i /local/spec.json -l go -o /local -c /local/config.json
   git checkout .travis.yml
   sed -e "s/GIT_USER_ID/miyanokomiya/" -e "s/GIT_REPO_ID/strava-client-go/" go.mod > go.mod
   git add -A
