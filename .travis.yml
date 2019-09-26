@@ -3,9 +3,6 @@ language: go
 services:
   - docker
 
-install:
-  - go get -d -v .
-
 script:
   - bash ./generate.sh
 
