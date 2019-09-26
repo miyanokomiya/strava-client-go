@@ -10,11 +10,11 @@
 package strava
 
 import (
+	"context"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-	"context"
 	"fmt"
 	"github.com/antihax/optional"
 )
@@ -114,11 +114,6 @@ func (a *ClubsApiService) GetClubActivitiesById(ctx context.Context, id int32, l
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []SummaryActivity
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -130,11 +125,6 @@ func (a *ClubsApiService) GetClubActivitiesById(ctx context.Context, id int32, l
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -239,11 +229,6 @@ func (a *ClubsApiService) GetClubAdminsById(ctx context.Context, id int32, local
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []SummaryAthlete
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -255,11 +240,6 @@ func (a *ClubsApiService) GetClubAdminsById(ctx context.Context, id int32, local
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -349,11 +329,6 @@ func (a *ClubsApiService) GetClubById(ctx context.Context, id int32) (DetailedCl
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v DetailedClub
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -365,11 +340,6 @@ func (a *ClubsApiService) GetClubById(ctx context.Context, id int32) (DetailedCl
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -474,11 +444,6 @@ func (a *ClubsApiService) GetClubMembersById(ctx context.Context, id int32, loca
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []SummaryAthlete
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -490,11 +455,6 @@ func (a *ClubsApiService) GetClubMembersById(ctx context.Context, id int32, loca
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -597,11 +557,6 @@ func (a *ClubsApiService) GetLoggedInAthleteClubs(ctx context.Context, localVarO
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []SummaryClub
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -613,11 +568,6 @@ func (a *ClubsApiService) GetLoggedInAthleteClubs(ctx context.Context, localVarO
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {

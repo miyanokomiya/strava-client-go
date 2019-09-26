@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Type_** | **int32** | This route&#39;s type (1 for ride, 2 for runs) | [optional] [default to null]
 **SubType** | **int32** | This route&#39;s sub-type (1 for road, 2 for mountain bike, 3 for cross, 4 for trail, 5 for mixed) | [optional] [default to null]
 **Segments** | [**[]SummarySegment**](SummarySegment.md) | The segments traversed by this route | [optional] [default to null]
-**Directions** | [**[]RouteDirection**](#/RouteDirection.md) | The directions of this route | [optional] [default to null]
+**Directions** | [**[]RouteDirection**](RouteDirection.md) | The directions of this route | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

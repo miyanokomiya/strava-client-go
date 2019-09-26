@@ -10,11 +10,11 @@
 package strava
 
 import (
+	"context"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-	"context"
 	"fmt"
 )
 
@@ -105,11 +105,6 @@ func (a *StreamsApiService) GetActivityStreams(ctx context.Context, id int64, ke
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v StreamSet
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -121,11 +116,6 @@ func (a *StreamsApiService) GetActivityStreams(ctx context.Context, id int64, ke
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -215,11 +205,6 @@ func (a *StreamsApiService) GetRouteStreams(ctx context.Context, id int64) (Stre
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v StreamSet
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -231,11 +216,6 @@ func (a *StreamsApiService) GetRouteStreams(ctx context.Context, id int64) (Stre
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -332,11 +312,6 @@ func (a *StreamsApiService) GetSegmentEffortStreams(ctx context.Context, id int6
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v StreamSet
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -348,11 +323,6 @@ func (a *StreamsApiService) GetSegmentEffortStreams(ctx context.Context, id int6
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -449,11 +419,6 @@ func (a *StreamsApiService) GetSegmentStreams(ctx context.Context, id int64, key
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v StreamSet
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -465,11 +430,6 @@ func (a *StreamsApiService) GetSegmentStreams(ctx context.Context, id int64, key
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {

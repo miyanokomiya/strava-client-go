@@ -10,11 +10,11 @@
 package strava
 
 import (
+	"context"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-	"context"
 	"fmt"
 	"os"
 	"github.com/antihax/optional"
@@ -149,11 +149,6 @@ func (a *UploadsApiService) CreateUpload(ctx context.Context, localVarOptionals 
 		}
 		
 		if localVarHttpResponse.StatusCode == 201 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Upload
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -165,11 +160,6 @@ func (a *UploadsApiService) CreateUpload(ctx context.Context, localVarOptionals 
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -259,11 +249,6 @@ func (a *UploadsApiService) GetUploadById(ctx context.Context, uploadId int64) (
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Upload
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -275,11 +260,6 @@ func (a *UploadsApiService) GetUploadById(ctx context.Context, uploadId int64) (
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {

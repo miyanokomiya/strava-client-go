@@ -27,7 +27,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The name of the activity. | 
   **type_** | **string**| Type of activity. For example - Run, Ride etc. | 
-  **startDateLocal** | [**ErrorUnknown**](.md)| ISO 8601 formatted date time. | 
+  **startDateLocal** | [**interface{}**](.md)| ISO 8601 formatted date time. | 
   **elapsedTime** | **int32**| In seconds. | 
  **optional** | ***CreateActivityOpts** | optional parameters | nil if no parameters
 
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
  **description** | **optional.String**| Description of the activity. | 
  **distance** | **optional.Float32**| In meters. | 
  **trainer** | **optional.Int32**| Set to 1 to mark as a trainer activity. | 
- **photoIds** | [**optional.Interface of ErrorUnknown**](.md)| List of native photo ids to attach to the activity. | 
+ **photoIds** | [**optional.Interface of interface{}**](.md)| List of native photo ids to attach to the activity. | 
  **commute** | **optional.Int32**| Set to 1 to mark as commute. | 
 
 ### Return type

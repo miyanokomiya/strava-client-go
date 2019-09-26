@@ -10,11 +10,11 @@
 package strava
 
 import (
+	"context"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-	"context"
 	"fmt"
 	"github.com/antihax/optional"
 )
@@ -125,11 +125,6 @@ func (a *SegmentsApiService) ExploreSegments(ctx context.Context, bounds []float
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v ExplorerResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -141,11 +136,6 @@ func (a *SegmentsApiService) ExploreSegments(ctx context.Context, bounds []float
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -285,11 +275,6 @@ func (a *SegmentsApiService) GetLeaderboardBySegmentId(ctx context.Context, id i
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v SegmentLeaderboard
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -301,11 +286,6 @@ func (a *SegmentsApiService) GetLeaderboardBySegmentId(ctx context.Context, id i
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -408,11 +388,6 @@ func (a *SegmentsApiService) GetLoggedInAthleteStarredSegments(ctx context.Conte
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []SummarySegment
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -424,11 +399,6 @@ func (a *SegmentsApiService) GetLoggedInAthleteStarredSegments(ctx context.Conte
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -518,11 +488,6 @@ func (a *SegmentsApiService) GetSegmentById(ctx context.Context, id int64) (Deta
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v DetailedSegment
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -534,11 +499,6 @@ func (a *SegmentsApiService) GetSegmentById(ctx context.Context, id int64) (Deta
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -630,11 +590,6 @@ func (a *SegmentsApiService) StarSegment(ctx context.Context, id int64, starred 
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v DetailedSegment
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -646,11 +601,6 @@ func (a *SegmentsApiService) StarSegment(ctx context.Context, id int64, starred 
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {

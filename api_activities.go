@@ -10,11 +10,11 @@
 package strava
 
 import (
+	"context"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-	"context"
 	"fmt"
 	"github.com/antihax/optional"
 )
@@ -38,7 +38,7 @@ Creates a manual activity for an athlete, requires activity:write scope.
      * @param "Description" (optional.String) -  Description of the activity.
      * @param "Distance" (optional.Float32) -  In meters.
      * @param "Trainer" (optional.Int32) -  Set to 1 to mark as a trainer activity.
-     * @param "PhotoIds" (optional.Interface of ErrorUnknown) -  List of native photo ids to attach to the activity.
+     * @param "PhotoIds" (optional.Interface of interface{}) -  List of native photo ids to attach to the activity.
      * @param "Commute" (optional.Int32) -  Set to 1 to mark as commute.
 
 @return DetailedActivity
@@ -52,7 +52,7 @@ type CreateActivityOpts struct {
 	Commute optional.Int32
 }
 
-func (a *ActivitiesApiService) CreateActivity(ctx context.Context, name string, type_ string, startDateLocal ErrorUnknown, elapsedTime int32, localVarOptionals *CreateActivityOpts) (DetailedActivity, *http.Response, error) {
+func (a *ActivitiesApiService) CreateActivity(ctx context.Context, name string, type_ string, startDateLocal interface{}, elapsedTime int32, localVarOptionals *CreateActivityOpts) (DetailedActivity, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -135,11 +135,6 @@ func (a *ActivitiesApiService) CreateActivity(ctx context.Context, name string, 
 		}
 		
 		if localVarHttpResponse.StatusCode == 201 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v DetailedActivity
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -151,11 +146,6 @@ func (a *ActivitiesApiService) CreateActivity(ctx context.Context, name string, 
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -255,11 +245,6 @@ func (a *ActivitiesApiService) GetActivityById(ctx context.Context, id int64, lo
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v DetailedActivity
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -271,11 +256,6 @@ func (a *ActivitiesApiService) GetActivityById(ctx context.Context, id int64, lo
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -380,11 +360,6 @@ func (a *ActivitiesApiService) GetCommentsByActivityId(ctx context.Context, id i
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []Comment
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -396,11 +371,6 @@ func (a *ActivitiesApiService) GetCommentsByActivityId(ctx context.Context, id i
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -505,11 +475,6 @@ func (a *ActivitiesApiService) GetKudoersByActivityId(ctx context.Context, id in
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []SummaryAthlete
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -521,11 +486,6 @@ func (a *ActivitiesApiService) GetKudoersByActivityId(ctx context.Context, id in
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -615,11 +575,6 @@ func (a *ActivitiesApiService) GetLapsByActivityId(ctx context.Context, id int64
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []Lap
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -631,11 +586,6 @@ func (a *ActivitiesApiService) GetLapsByActivityId(ctx context.Context, id int64
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -748,11 +698,6 @@ func (a *ActivitiesApiService) GetLoggedInAthleteActivities(ctx context.Context,
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []SummaryActivity
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -764,11 +709,6 @@ func (a *ActivitiesApiService) GetLoggedInAthleteActivities(ctx context.Context,
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -858,11 +798,6 @@ func (a *ActivitiesApiService) GetZonesByActivityId(ctx context.Context, id int3
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v []ActivityZone
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -874,11 +809,6 @@ func (a *ActivitiesApiService) GetZonesByActivityId(ctx context.Context, id int3
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -984,11 +914,6 @@ func (a *ActivitiesApiService) UpdateActivityById(ctx context.Context, id int64,
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v DetailedActivity
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
@@ -1000,11 +925,6 @@ func (a *ActivitiesApiService) UpdateActivityById(ctx context.Context, id int64,
 		}
 		
 		if localVarHttpResponse.StatusCode == 0 {
-			localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-			if err != nil {
-				return localVarReturnValue, localVarHttpResponse, err
-			}
-
 			var v Fault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
