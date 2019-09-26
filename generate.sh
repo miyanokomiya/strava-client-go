@@ -3,7 +3,7 @@
 git checkout master
 git pull origin master
 curl https://developers.strava.com/swagger/swagger.json > spec.json
-git diff spec.json --exit-code --quiet
+git diff --exit-code --quiet spec.json
 if [[ $? -eq 1 ]]; then
   VERSION=`ruby ./migrate.rb`
   echo generate:${VERSION}
