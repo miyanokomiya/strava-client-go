@@ -26,6 +26,7 @@ type Route struct {
 	Private bool `json:"private,omitempty"`
 	// Whether this route is starred by the logged-in athlete
 	Starred bool `json:"starred,omitempty"`
+	// An epoch timestamp of when the route was created
 	Timestamp int32 `json:"timestamp,omitempty"`
 	// This route's type (1 for ride, 2 for runs)
 	Type_ int32 `json:"type,omitempty"`
@@ -33,6 +34,4 @@ type Route struct {
 	SubType int32 `json:"sub_type,omitempty"`
 	// The segments traversed by this route
 	Segments []SummarySegment `json:"segments,omitempty"`
-	// The directions of this route
-	Directions []RouteDirection `json:"directions,omitempty"`
 }

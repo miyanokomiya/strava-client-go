@@ -38,7 +38,6 @@ Creates a manual activity for an athlete, requires activity:write scope.
      * @param "Description" (optional.String) -  Description of the activity.
      * @param "Distance" (optional.Float32) -  In meters.
      * @param "Trainer" (optional.Int32) -  Set to 1 to mark as a trainer activity.
-     * @param "PhotoIds" (optional.Interface of interface{}) -  List of native photo ids to attach to the activity.
      * @param "Commute" (optional.Int32) -  Set to 1 to mark as commute.
 
 @return DetailedActivity
@@ -48,7 +47,6 @@ type CreateActivityOpts struct {
 	Description optional.String
 	Distance optional.Float32
 	Trainer optional.Int32
-	PhotoIds optional.Interface
 	Commute optional.Int32
 }
 
@@ -97,9 +95,6 @@ func (a *ActivitiesApiService) CreateActivity(ctx context.Context, name string, 
 	}
 	if localVarOptionals != nil && localVarOptionals.Trainer.IsSet() {
 		localVarFormParams.Add("trainer", parameterToString(localVarOptionals.Trainer.Value(), ""))
-	}
-	if localVarOptionals != nil && localVarOptionals.PhotoIds.IsSet() {
-		localVarFormParams.Add("photo_ids", parameterToString(localVarOptionals.PhotoIds.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Commute.IsSet() {
 		localVarFormParams.Add("commute", parameterToString(localVarOptionals.Commute.Value(), ""))

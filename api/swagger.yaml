@@ -942,11 +942,6 @@ paths:
         type: "integer"
         x-exportParamName: "Trainer"
         x-optionalDataType: "Int32"
-      - name: "photo_ids"
-        in: "formData"
-        description: "List of native photo ids to attach to the activity."
-        required: false
-        x-exportParamName: "PhotoIds"
       - name: "commute"
         in: "formData"
         description: "Set to 1 to mark as commute."
@@ -3085,7 +3080,8 @@ definitions:
         description: "The identifier of the map"
       polyline:
         type: "string"
-        description: "The polyline of the map"
+        description: "The polyline of the map, only returned on detailed representation\
+          \ of an object"
       summary_polyline:
         type: "string"
         description: "The summary polyline of the map"
@@ -3787,6 +3783,7 @@ definitions:
         description: "Whether this route is starred by the logged-in athlete"
       timestamp:
         type: "integer"
+        description: "An epoch timestamp of when the route was created"
       type:
         type: "integer"
         description: "This route's type (1 for ride, 2 for runs)"
@@ -3799,11 +3796,6 @@ definitions:
         description: "The segments traversed by this route"
         items:
           $ref: "#/definitions/SummarySegment"
-      directions:
-        type: "array"
-        description: "The directions of this route"
-        items:
-          $ref: "#/definitions/RouteDirection"
     example:
       private: true
       distance: 0.8008282
@@ -3857,13 +3849,6 @@ definitions:
         id: 7
         state: "state"
       starred: true
-      directions:
-      - distance: 7.4577446
-        name: "name"
-        action: 1
-      - distance: 7.4577446
-        name: "name"
-        action: 1
       sub_type: 2
       name: "name"
       id: 1
@@ -3872,23 +3857,6 @@ definitions:
         id: "id"
         polyline: "polyline"
       timestamp: 5
-  RouteDirection:
-    type: "object"
-    properties:
-      distance:
-        type: "number"
-        format: "float"
-        description: "The distance in the route at which the action applies"
-      action:
-        type: "integer"
-        description: "The action of this direction"
-      name:
-        type: "string"
-    description: ""
-    example:
-      distance: 7.4577446
-      name: "name"
-      action: 1
   Upload:
     type: "object"
     properties:

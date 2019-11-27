@@ -1139,13 +1139,6 @@
             "required": false
           },
           {
-            "name": "photo_ids",
-            "in": "formData",
-            "description": "List of native photo ids to attach to the activity.",
-            "type": "string[]",
-            "required": false
-          },
-          {
             "name": "commute",
             "in": "formData",
             "description": "Set to 1 to mark as commute.",

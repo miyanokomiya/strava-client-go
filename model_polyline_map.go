@@ -12,7 +12,7 @@ package strava
 type PolylineMap struct {
 	// The identifier of the map
 	Id string `json:"id,omitempty"`
-	// The polyline of the map
+	// The polyline of the map, only returned on detailed representation of an object
 	Polyline string `json:"polyline,omitempty"`
 	// The summary polyline of the map
 	SummaryPolyline string `json:"summary_polyline,omitempty"`

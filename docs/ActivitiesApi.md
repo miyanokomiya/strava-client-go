@@ -43,7 +43,6 @@ Name | Type | Description  | Notes
  **description** | **optional.String**| Description of the activity. | 
  **distance** | **optional.Float32**| In meters. | 
  **trainer** | **optional.Int32**| Set to 1 to mark as a trainer activity. | 
- **photoIds** | [**optional.Interface of interface{}**](.md)| List of native photo ids to attach to the activity. | 
  **commute** | **optional.Int32**| Set to 1 to mark as commute. | 
 
 ### Return type
