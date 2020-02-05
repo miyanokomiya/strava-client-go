@@ -5,7 +5,7 @@ All URIs are relative to *https://www.strava.com/api/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetClubActivitiesById**](ClubsApi.md#GetClubActivitiesById) | **Get** /clubs/{id}/activities | List Club Activities
-[**GetClubAdminsById**](ClubsApi.md#GetClubAdminsById) | **Get** /clubs/{id}/admins | List Club Administrators.
+[**GetClubAdminsById**](ClubsApi.md#GetClubAdminsById) | **Get** /clubs/{id}/admins | List Club Administrators
 [**GetClubById**](ClubsApi.md#GetClubById) | **Get** /clubs/{id} | Get Club
 [**GetClubMembersById**](ClubsApi.md#GetClubMembersById) | **Get** /clubs/{id}/members | List Club Members
 [**GetLoggedInAthleteClubs**](ClubsApi.md#GetLoggedInAthleteClubs) | **Get** /athlete/clubs | List Athlete Clubs
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 # **GetClubAdminsById**
 > []SummaryAthlete GetClubAdminsById(ctx, id, optional)
-List Club Administrators.
+List Club Administrators
 
 Returns a list of the administrators of a given club.
 

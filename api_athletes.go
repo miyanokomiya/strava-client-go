@@ -16,7 +16,6 @@ import (
 	"net/url"
 	"strings"
 	"fmt"
-	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -224,22 +223,13 @@ func (a *AthletesApiService) GetLoggedInAthleteZones(ctx context.Context) (Zones
 
 /* 
 AthletesApiService Get Athlete Stats
-Returns the activity stats of an athlete.
+Returns the activity stats of an athlete. Only includes data from activities set to Everyone visibilty.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id The identifier of the athlete. Must match the authenticated athlete.
- * @param optional nil or *GetStatsOpts - Optional Parameters:
-     * @param "Page" (optional.Int32) -  Page number.
-     * @param "PerPage" (optional.Int32) -  Number of items per page. Defaults to 30.
 
 @return ActivityStats
 */
-
-type GetStatsOpts struct { 
-	Page optional.Int32
-	PerPage optional.Int32
-}
-
-func (a *AthletesApiService) GetStats(ctx context.Context, id int32, localVarOptionals *GetStatsOpts) (ActivityStats, *http.Response, error) {
+func (a *AthletesApiService) GetStats(ctx context.Context, id int32) (ActivityStats, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -256,12 +246,6 @@ func (a *AthletesApiService) GetStats(ctx context.Context, id int32, localVarOpt
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if localVarOptionals != nil && localVarOptionals.Page.IsSet() {
-		localVarQueryParams.Add("page", parameterToString(localVarOptionals.Page.Value(), ""))
-	}
-	if localVarOptionals != nil && localVarOptionals.PerPage.IsSet() {
-		localVarQueryParams.Add("per_page", parameterToString(localVarOptionals.PerPage.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
 

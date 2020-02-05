@@ -163,7 +163,7 @@ Returns the specified segment leaderboard.
      * @param "WeightClass" (optional.String) -  Summit Feature. Filter by weight class.
      * @param "Following" (optional.Bool) -  Filter by friends of the authenticated athlete.
      * @param "ClubId" (optional.Int64) -  Filter by club.
-     * @param "DateRange" (optional.String) -  Filter by date range.
+     * @param "DateRange" (optional.String) -  Filter by date range, will be in the athlete&#39;s timezone
      * @param "ContextEntries" (optional.Int32) - 
      * @param "Page" (optional.Int32) -  Page number.
      * @param "PerPage" (optional.Int32) -  Number of items per page. Defaults to 30.

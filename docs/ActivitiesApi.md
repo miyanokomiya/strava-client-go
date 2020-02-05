@@ -146,7 +146,7 @@ Returns the athletes who kudoed an activity identified by an identifier. Require
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| The identifier of the activity. | 
+  **id** | **int64**| The identifier of the activity. | 
  **optional** | ***GetKudoersByActivityIdOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters

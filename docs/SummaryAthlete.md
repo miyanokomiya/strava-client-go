@@ -13,8 +13,6 @@ Name | Type | Description | Notes
 **State** | **string** | The athlete&#39;s state or geographical region. | [optional] [default to null]
 **Country** | **string** | The athlete&#39;s country. | [optional] [default to null]
 **Sex** | **string** | The athlete&#39;s sex. | [optional] [default to null]
-**Friend** | **string** | Whether the currently logged-in athlete follows this athlete. | [optional] [default to null]
-**Follower** | **string** | Whether this athlete follows the currently logged-in athlete. | [optional] [default to null]
 **Premium** | **bool** | Deprecated.  Use summit field instead. Whether the athlete has any Summit subscription. | [optional] [default to null]
 **Summit** | **bool** | Whether the athlete has any Summit subscription. | [optional] [default to null]
 **CreatedAt** | [**time.Time**](time.Time.md) | The time at which the athlete was created. | [optional] [default to null]

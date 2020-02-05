@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
  **weightClass** | **optional.String**| Summit Feature. Filter by weight class. | 
  **following** | **optional.Bool**| Filter by friends of the authenticated athlete. | 
  **clubId** | **optional.Int64**| Filter by club. | 
- **dateRange** | **optional.String**| Filter by date range. | 
+ **dateRange** | **optional.String**| Filter by date range, will be in the athlete&#39;s timezone | 
  **contextEntries** | **optional.Int32**|  | 
  **page** | **optional.Int32**| Page number. | 
  **perPage** | **optional.Int32**| Number of items per page. Defaults to 30. | [default to 30]

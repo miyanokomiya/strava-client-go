@@ -142,7 +142,7 @@ func (a *ClubsApiService) GetClubActivitiesById(ctx context.Context, id int32, l
 }
 
 /* 
-ClubsApiService List Club Administrators.
+ClubsApiService List Club Administrators
 Returns a list of the administrators of a given club.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id The identifier of the club.

@@ -27,7 +27,8 @@ paths:
       tags:
       - "Athletes"
       summary: "Get Athlete Stats"
-      description: "Returns the activity stats of an athlete."
+      description: "Returns the activity stats of an athlete. Only includes data from\
+        \ activities set to Everyone visibilty."
       operationId: "getStats"
       parameters:
       - name: "id"
@@ -37,21 +38,6 @@ paths:
         required: true
         type: "integer"
         x-exportParamName: "Id"
-      - name: "page"
-        in: "query"
-        description: "Page number."
-        required: false
-        type: "integer"
-        x-exportParamName: "Page"
-        x-optionalDataType: "Int32"
-      - name: "per_page"
-        in: "query"
-        description: "Number of items per page. Defaults to 30."
-        required: false
-        type: "integer"
-        default: 30
-        x-exportParamName: "PerPage"
-        x-optionalDataType: "Int32"
       responses:
         200:
           description: "Activity stats of the athlete."
@@ -77,10 +63,10 @@ paths:
           examples:
             application/json:
               id: 1234567890987654321
-              username: "marianne_v"
+              username: "marianne_t"
               resource_state: 3
               firstname: "Marianne"
-              lastname: "V."
+              lastname: "Teutenberg"
               city: "San Francisco"
               state: "CA"
               country: "US"
@@ -543,7 +529,7 @@ paths:
         x-optionalDataType: "Int64"
       - name: "date_range"
         in: "query"
-        description: "Filter by date range."
+        description: "Filter by date range, will be in the athlete's timezone"
         required: false
         type: "string"
         enum:
@@ -1728,6 +1714,7 @@ paths:
         description: "The identifier of the activity."
         required: true
         type: "integer"
+        format: "int64"
         x-exportParamName: "Id"
       - name: "page"
         in: "query"
@@ -1860,7 +1847,7 @@ paths:
     get:
       tags:
       - "Clubs"
-      summary: "List Club Administrators."
+      summary: "List Club Administrators"
       description: "Returns a list of the administrators of a given club."
       operationId: "getClubAdminsById"
       parameters:
@@ -2708,10 +2695,6 @@ definitions:
         friend_count:
           type: "integer"
           description: "The athlete's friend count."
-        mutual_friend_count:
-          type: "integer"
-          description: "The number or athletes mutually followed by this athlete and\
-            \ the currently logged-in athlete."
         measurement_preference:
           type: "string"
           description: "The athlete's preferred unit system."
@@ -2775,20 +2758,6 @@ definitions:
           enum:
           - "M"
           - "F"
-        friend:
-          type: "string"
-          description: "Whether the currently logged-in athlete follows this athlete."
-          enum:
-          - "pending"
-          - "accepted"
-          - "blocked"
-        follower:
-          type: "string"
-          description: "Whether this athlete follows the currently logged-in athlete."
-          enum:
-          - "pending"
-          - "accepted"
-          - "blocked"
         premium:
           type: "boolean"
           description: "Deprecated.  Use summit field instead. Whether the athlete\

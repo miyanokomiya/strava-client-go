@@ -34,10 +34,6 @@ type DetailedAthlete struct {
 	Country string `json:"country,omitempty"`
 	// The athlete's sex.
 	Sex string `json:"sex,omitempty"`
-	// Whether the currently logged-in athlete follows this athlete.
-	Friend string `json:"friend,omitempty"`
-	// Whether this athlete follows the currently logged-in athlete.
-	Follower string `json:"follower,omitempty"`
 	// Deprecated.  Use summit field instead. Whether the athlete has any Summit subscription.
 	Premium bool `json:"premium,omitempty"`
 	// Whether the athlete has any Summit subscription.
@@ -50,8 +46,6 @@ type DetailedAthlete struct {
 	FollowerCount int32 `json:"follower_count,omitempty"`
 	// The athlete's friend count.
 	FriendCount int32 `json:"friend_count,omitempty"`
-	// The number or athletes mutually followed by this athlete and the currently logged-in athlete.
-	MutualFriendCount int32 `json:"mutual_friend_count,omitempty"`
 	// The athlete's preferred unit system.
 	MeasurementPreference string `json:"measurement_preference,omitempty"`
 	// The athlete's FTP (Functional Threshold Power).

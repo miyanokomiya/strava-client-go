@@ -399,7 +399,7 @@ type GetKudoersByActivityIdOpts struct {
 	PerPage optional.Int32
 }
 
-func (a *ActivitiesApiService) GetKudoersByActivityId(ctx context.Context, id int32, localVarOptionals *GetKudoersByActivityIdOpts) ([]SummaryAthlete, *http.Response, error) {
+func (a *ActivitiesApiService) GetKudoersByActivityId(ctx context.Context, id int64, localVarOptionals *GetKudoersByActivityIdOpts) ([]SummaryAthlete, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}

@@ -59,10 +59,10 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetStats**
-> ActivityStats GetStats(ctx, id, optional)
+> ActivityStats GetStats(ctx, id)
 Get Athlete Stats
 
-Returns the activity stats of an athlete.
+Returns the activity stats of an athlete. Only includes data from activities set to Everyone visibilty.
 
 ### Required Parameters
 
@@ -70,16 +70,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **id** | **int32**| The identifier of the athlete. Must match the authenticated athlete. | 
- **optional** | ***GetStatsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a GetStatsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **page** | **optional.Int32**| Page number. | 
- **perPage** | **optional.Int32**| Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 
