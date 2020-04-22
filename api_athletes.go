@@ -347,7 +347,7 @@ func (a *AthletesApiService) UpdateLoggedInAthlete(ctx context.Context, weight f
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"multipart/form-data"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)

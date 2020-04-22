@@ -62,7 +62,7 @@ func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		BasePath:      "https://www.strava.com/api/v3",
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "Swagger-Codegen/v1.0.9/go",
+		UserAgent:     "Swagger-Codegen/v1.0.10/go",
 	}
 	return cfg
 }

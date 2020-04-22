@@ -16,6 +16,7 @@ import (
 	"net/url"
 	"strings"
 	"fmt"
+	"time"
 	"github.com/antihax/optional"
 )
 
@@ -50,7 +51,7 @@ type CreateActivityOpts struct {
 	Commute optional.Int32
 }
 
-func (a *ActivitiesApiService) CreateActivity(ctx context.Context, name string, type_ string, startDateLocal interface{}, elapsedTime int32, localVarOptionals *CreateActivityOpts) (DetailedActivity, *http.Response, error) {
+func (a *ActivitiesApiService) CreateActivity(ctx context.Context, name string, type_ string, startDateLocal time.Time, elapsedTime int32, localVarOptionals *CreateActivityOpts) (DetailedActivity, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}

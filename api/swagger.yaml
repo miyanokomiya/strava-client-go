@@ -110,6 +110,8 @@ paths:
       description: "Update the currently authenticated athlete. Requires profile:write\
         \ scope."
       operationId: "updateLoggedInAthlete"
+      consumes:
+      - "multipart/form-data"
       parameters:
       - name: "weight"
         in: "path"
@@ -258,10 +260,6 @@ paths:
               end_latlng:
               - 37.8280722
               - -122.4981393
-              start_latitude: 37.8331119
-              start_longitude: -122.4834356
-              end_latitude: 37.8280722
-              end_longitude: -122.4981393
               climb_category: 1
               city: "San Francisco"
               state: "CA"
@@ -335,10 +333,6 @@ paths:
               end_latlng:
               - 37.8280722
               - -122.4981393
-              start_latitude: 37.8331119
-              start_longitude: -122.4834356
-              end_latitude: 37.8280722
-              end_longitude: -122.4981393
               climb_category: 1
               city: "San Francisco"
               state: "CA"
@@ -413,10 +407,6 @@ paths:
               end_latlng:
               - 37.8280722
               - -122.4981393
-              start_latitude: 37.8331119
-              start_longitude: -122.4834356
-              end_latitude: 37.8280722
-              end_longitude: -122.4981393
               climb_category: 1
               city: "San Francisco"
               state: "CA"
@@ -650,10 +640,6 @@ paths:
                 end_latlng:
                 - 53.02204074375785
                 - -3.2039630001245736
-                start_latitude: 82.9858888581467
-                start_longitude: -3.1869788881197367
-                end_latitude: 43.02204034338079
-                end_longitude: -13.203963999124573
                 climb_category: 2
                 city: "Le Bourg D'Oisans"
                 state: "RA"
@@ -803,10 +789,6 @@ paths:
                 end_latlng:
                 - 37.808297909724
                 - -122.421324329674
-                start_latitude: 37.80840654682
-                start_longitude: -122.45682919323
-                end_latitude: 37.80829000979624
-                end_longitude: -122.42000324329673
                 climb_category: 0
                 city: "San Francisco"
                 state: "CA"
@@ -899,6 +881,8 @@ paths:
         in: "formData"
         description: "ISO 8601 formatted date time."
         required: true
+        type: "string"
+        format: "date-time"
         x-exportParamName: "StartDateLocal"
       - name: "elapsed_time"
         in: "formData"
@@ -978,10 +962,6 @@ paths:
               has_kudoed: false
               calories: 0
               segment_efforts: []
-              highlighted_kudosers: []
-              embed_token: "e65c2a814xxxxxxxxxxxxxxxxx68"
-              segment_leaderboard_opt_out: false
-              leaderboard_opt_out: false
           schema:
             $ref: "#/definitions/DetailedActivity"
         default:
@@ -1040,8 +1020,6 @@ paths:
               end_latlng:
               - 37.83
               - -122.26
-              start_latitude: 37.83
-              start_longitude: -122.26
               achievement_count: 0
               kudos_count: 19
               comment_count: 0
@@ -1126,10 +1104,6 @@ paths:
                   end_latlng:
                   - 37.8476261
                   - -122.2008944
-                  start_latitude: 37.8346153
-                  start_longitude: -122.2520872
-                  end_latitude: 37.8476261
-                  end_longitude: -122.2008944
                   climb_category: 3
                   city: "Oakland"
                   state: "CA"
@@ -1253,8 +1227,6 @@ paths:
               - 37.83
               - -122.26
               location_country: "United States"
-              start_latitude: 37.83
-              start_longitude: -122.26
               achievement_count: 0
               kudos_count: 19
               comment_count: 0
@@ -1339,10 +1311,6 @@ paths:
                   end_latlng:
                   - 37.8476261
                   - -122.2008944
-                  start_latitude: 37.8346153
-                  start_longitude: -122.2520872
-                  end_latitude: 37.8476261
-                  end_longitude: -122.2008944
                   climb_category: 3
                   city: "Oakland"
                   state: "CA"

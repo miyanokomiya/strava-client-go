@@ -27,7 +27,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The name of the activity. | 
   **type_** | **string**| Type of activity. For example - Run, Ride etc. | 
-  **startDateLocal** | [**interface{}**](.md)| ISO 8601 formatted date time. | 
+  **startDateLocal** | **time.Time**| ISO 8601 formatted date time. | 
   **elapsedTime** | **int32**| In seconds. | 
  **optional** | ***CreateActivityOpts** | optional parameters | nil if no parameters
 
