@@ -571,7 +571,7 @@ paths:
           description: "Unexpected error."
           schema:
             $ref: "#/definitions/Fault"
-  /segments/{id}/all_efforts:
+  /segment_efforts:
     get:
       tags:
       - "SegmentEfforts"
@@ -580,19 +580,28 @@ paths:
         \ a given segment."
       operationId: "getEffortsBySegmentId"
       parameters:
-      - name: "id"
-        in: "path"
+      - name: "segment_id"
+        in: "query"
         description: "The identifier of the segment."
         required: true
         type: "integer"
-        x-exportParamName: "Id"
-      - name: "page"
+        x-exportParamName: "SegmentId"
+      - name: "start_date_local"
         in: "query"
-        description: "Page number."
+        description: "ISO 8601 formatted date time."
         required: false
-        type: "integer"
-        x-exportParamName: "Page"
-        x-optionalDataType: "Int32"
+        type: "string"
+        format: "date-time"
+        x-exportParamName: "StartDateLocal"
+        x-optionalDataType: "Time"
+      - name: "end_date_local"
+        in: "query"
+        description: "ISO 8601 formatted date time."
+        required: false
+        type: "string"
+        format: "date-time"
+        x-exportParamName: "EndDateLocal"
+        x-optionalDataType: "Time"
       - name: "per_page"
         in: "query"
         description: "Number of items per page. Defaults to 30."

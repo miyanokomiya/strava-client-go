@@ -4,12 +4,12 @@ All URIs are relative to *https://www.strava.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetEffortsBySegmentId**](SegmentEffortsApi.md#GetEffortsBySegmentId) | **Get** /segments/{id}/all_efforts | List Segment Efforts
+[**GetEffortsBySegmentId**](SegmentEffortsApi.md#GetEffortsBySegmentId) | **Get** /segment_efforts | List Segment Efforts
 [**GetSegmentEffortById**](SegmentEffortsApi.md#GetSegmentEffortById) | **Get** /segment_efforts/{id} | Get Segment Effort
 
 
 # **GetEffortsBySegmentId**
-> []DetailedSegmentEffort GetEffortsBySegmentId(ctx, id, optional)
+> []DetailedSegmentEffort GetEffortsBySegmentId(ctx, segmentId, optional)
 List Segment Efforts
 
 Returns a set of the authenticated athlete's segment efforts for a given segment.
@@ -19,7 +19,7 @@ Returns a set of the authenticated athlete's segment efforts for a given segment
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| The identifier of the segment. | 
+  **segmentId** | **int32**| The identifier of the segment. | 
  **optional** | ***GetEffortsBySegmentIdOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -28,7 +28,8 @@ Optional parameters are passed through a pointer to a GetEffortsBySegmentIdOpts 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **optional.Int32**| Page number. | 
+ **startDateLocal** | **optional.Time**| ISO 8601 formatted date time. | 
+ **endDateLocal** | **optional.Time**| ISO 8601 formatted date time. | 
  **perPage** | **optional.Int32**| Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type

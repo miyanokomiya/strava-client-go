@@ -30,20 +30,22 @@ type SegmentEffortsApiService service
 SegmentEffortsApiService List Segment Efforts
 Returns a set of the authenticated athlete&#39;s segment efforts for a given segment.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param id The identifier of the segment.
+ * @param segmentId The identifier of the segment.
  * @param optional nil or *GetEffortsBySegmentIdOpts - Optional Parameters:
-     * @param "Page" (optional.Int32) -  Page number.
+     * @param "StartDateLocal" (optional.Time) -  ISO 8601 formatted date time.
+     * @param "EndDateLocal" (optional.Time) -  ISO 8601 formatted date time.
      * @param "PerPage" (optional.Int32) -  Number of items per page. Defaults to 30.
 
 @return []DetailedSegmentEffort
 */
 
 type GetEffortsBySegmentIdOpts struct { 
-	Page optional.Int32
+	StartDateLocal optional.Time
+	EndDateLocal optional.Time
 	PerPage optional.Int32
 }
 
-func (a *SegmentEffortsApiService) GetEffortsBySegmentId(ctx context.Context, id int32, localVarOptionals *GetEffortsBySegmentIdOpts) ([]DetailedSegmentEffort, *http.Response, error) {
+func (a *SegmentEffortsApiService) GetEffortsBySegmentId(ctx context.Context, segmentId int32, localVarOptionals *GetEffortsBySegmentIdOpts) ([]DetailedSegmentEffort, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -53,15 +55,18 @@ func (a *SegmentEffortsApiService) GetEffortsBySegmentId(ctx context.Context, id
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/segments/{id}/all_efforts"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
+	localVarPath := a.client.cfg.BasePath + "/segment_efforts"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if localVarOptionals != nil && localVarOptionals.Page.IsSet() {
-		localVarQueryParams.Add("page", parameterToString(localVarOptionals.Page.Value(), ""))
+	localVarQueryParams.Add("segment_id", parameterToString(segmentId, ""))
+	if localVarOptionals != nil && localVarOptionals.StartDateLocal.IsSet() {
+		localVarQueryParams.Add("start_date_local", parameterToString(localVarOptionals.StartDateLocal.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.EndDateLocal.IsSet() {
+		localVarQueryParams.Add("end_date_local", parameterToString(localVarOptionals.EndDateLocal.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.PerPage.IsSet() {
 		localVarQueryParams.Add("per_page", parameterToString(localVarOptionals.PerPage.Value(), ""))
