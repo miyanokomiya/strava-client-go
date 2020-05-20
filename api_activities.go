@@ -274,7 +274,7 @@ Returns the comments on the given activity. Requires activity:read for Everyone 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id The identifier of the activity.
  * @param optional nil or *GetCommentsByActivityIdOpts - Optional Parameters:
-     * @param "Page" (optional.Int32) -  Page number.
+     * @param "Page" (optional.Int32) -  Page number. Defaults to 1.
      * @param "PerPage" (optional.Int32) -  Number of items per page. Defaults to 30.
 
 @return []Comment
@@ -389,7 +389,7 @@ Returns the athletes who kudoed an activity identified by an identifier. Require
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id The identifier of the activity.
  * @param optional nil or *GetKudoersByActivityIdOpts - Optional Parameters:
-     * @param "Page" (optional.Int32) -  Page number.
+     * @param "Page" (optional.Int32) -  Page number. Defaults to 1.
      * @param "PerPage" (optional.Int32) -  Number of items per page. Defaults to 30.
 
 @return []SummaryAthlete
@@ -605,7 +605,7 @@ Returns the activities of an athlete for a specific identifier. Requires activit
  * @param optional nil or *GetLoggedInAthleteActivitiesOpts - Optional Parameters:
      * @param "Before" (optional.Int32) -  An epoch timestamp to use for filtering activities that have taken place before a certain time.
      * @param "After" (optional.Int32) -  An epoch timestamp to use for filtering activities that have taken place after a certain time.
-     * @param "Page" (optional.Int32) -  Page number.
+     * @param "Page" (optional.Int32) -  Page number. Defaults to 1.
      * @param "PerPage" (optional.Int32) -  Number of items per page. Defaults to 30.
 
 @return []SummaryActivity

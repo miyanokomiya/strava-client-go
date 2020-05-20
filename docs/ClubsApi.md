@@ -31,7 +31,7 @@ Optional parameters are passed through a pointer to a GetClubActivitiesByIdOpts 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **optional.Int32**| Page number. | 
+ **page** | **optional.Int32**| Page number. Defaults to 1. | 
  **perPage** | **optional.Int32**| Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
@@ -69,7 +69,7 @@ Optional parameters are passed through a pointer to a GetClubAdminsByIdOpts stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **optional.Int32**| Page number. | 
+ **page** | **optional.Int32**| Page number. Defaults to 1. | 
  **perPage** | **optional.Int32**| Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
@@ -135,7 +135,7 @@ Optional parameters are passed through a pointer to a GetClubMembersByIdOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **optional.Int32**| Page number. | 
+ **page** | **optional.Int32**| Page number. Defaults to 1. | 
  **perPage** | **optional.Int32**| Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
@@ -171,7 +171,7 @@ Optional parameters are passed through a pointer to a GetLoggedInAthleteClubsOpt
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **optional.Int32**| Page number. | 
+ **page** | **optional.Int32**| Page number. Defaults to 1. | 
  **perPage** | **optional.Int32**| Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type

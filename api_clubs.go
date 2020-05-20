@@ -32,7 +32,7 @@ Retrieve recent activities from members of a specific club. The authenticated at
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id The identifier of the club.
  * @param optional nil or *GetClubActivitiesByIdOpts - Optional Parameters:
-     * @param "Page" (optional.Int32) -  Page number.
+     * @param "Page" (optional.Int32) -  Page number. Defaults to 1.
      * @param "PerPage" (optional.Int32) -  Number of items per page. Defaults to 30.
 
 @return []SummaryActivity
@@ -147,7 +147,7 @@ Returns a list of the administrators of a given club.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id The identifier of the club.
  * @param optional nil or *GetClubAdminsByIdOpts - Optional Parameters:
-     * @param "Page" (optional.Int32) -  Page number.
+     * @param "Page" (optional.Int32) -  Page number. Defaults to 1.
      * @param "PerPage" (optional.Int32) -  Number of items per page. Defaults to 30.
 
 @return []SummaryAthlete
@@ -362,7 +362,7 @@ Returns a list of the athletes who are members of a given club.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id The identifier of the club.
  * @param optional nil or *GetClubMembersByIdOpts - Optional Parameters:
-     * @param "Page" (optional.Int32) -  Page number.
+     * @param "Page" (optional.Int32) -  Page number. Defaults to 1.
      * @param "PerPage" (optional.Int32) -  Number of items per page. Defaults to 30.
 
 @return []SummaryAthlete
@@ -476,7 +476,7 @@ ClubsApiService List Athlete Clubs
 Returns a list of the clubs whose membership includes the authenticated athlete.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetLoggedInAthleteClubsOpts - Optional Parameters:
-     * @param "Page" (optional.Int32) -  Page number.
+     * @param "Page" (optional.Int32) -  Page number. Defaults to 1.
      * @param "PerPage" (optional.Int32) -  Number of items per page. Defaults to 30.
 
 @return []SummaryClub

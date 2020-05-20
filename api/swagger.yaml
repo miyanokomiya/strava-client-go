@@ -300,7 +300,7 @@ paths:
       parameters:
       - name: "page"
         in: "query"
-        description: "Page number."
+        description: "Page number. Defaults to 1."
         required: false
         type: "integer"
         x-exportParamName: "Page"
@@ -432,141 +432,6 @@ paths:
                 effort_count: 2
           schema:
             $ref: "#/definitions/DetailedSegment"
-        default:
-          description: "Unexpected error."
-          schema:
-            $ref: "#/definitions/Fault"
-  /segments/{id}/leaderboard:
-    get:
-      tags:
-      - "Segments"
-      summary: "Get Segment Leaderboard"
-      description: "Returns the specified segment leaderboard."
-      operationId: "getLeaderboardBySegmentId"
-      parameters:
-      - name: "id"
-        in: "path"
-        description: "The identifier of the segment leaderboard."
-        required: true
-        type: "integer"
-        format: "int64"
-        x-exportParamName: "Id"
-      - name: "gender"
-        in: "query"
-        description: "Filter by gender."
-        required: false
-        type: "string"
-        enum:
-        - "M"
-        - "F"
-        x-exportParamName: "Gender"
-        x-optionalDataType: "String"
-      - name: "age_group"
-        in: "query"
-        description: "Summit Feature. Filter by age group."
-        required: false
-        type: "string"
-        enum:
-        - "0_19"
-        - "20_24"
-        - "25_34"
-        - "35_44"
-        - "45_54"
-        - "55_64"
-        - "65_69"
-        - "70_74"
-        - "75_plus"
-        x-exportParamName: "AgeGroup"
-        x-optionalDataType: "String"
-      - name: "weight_class"
-        in: "query"
-        description: "Summit Feature. Filter by weight class."
-        required: false
-        type: "string"
-        enum:
-        - "0_124"
-        - "125_149"
-        - "150_164"
-        - "165_179"
-        - "180_199"
-        - "200_224"
-        - "225_249"
-        - "250_plus"
-        - "0_54"
-        - "55_64"
-        - "65_74"
-        - "75_84"
-        - "85_94"
-        - "95_104"
-        - "105_114"
-        - "115_plus"
-        x-exportParamName: "WeightClass"
-        x-optionalDataType: "String"
-      - name: "following"
-        in: "query"
-        description: "Filter by friends of the authenticated athlete."
-        required: false
-        type: "boolean"
-        x-exportParamName: "Following"
-        x-optionalDataType: "Bool"
-      - name: "club_id"
-        in: "query"
-        description: "Filter by club."
-        required: false
-        type: "integer"
-        format: "int64"
-        x-exportParamName: "ClubId"
-        x-optionalDataType: "Int64"
-      - name: "date_range"
-        in: "query"
-        description: "Filter by date range, will be in the athlete's timezone"
-        required: false
-        type: "string"
-        enum:
-        - "this_year"
-        - "this_month"
-        - "this_week"
-        - "today"
-        x-exportParamName: "DateRange"
-        x-optionalDataType: "String"
-      - name: "context_entries"
-        in: "query"
-        required: false
-        type: "integer"
-        x-exportParamName: "ContextEntries"
-        x-optionalDataType: "Int32"
-      - name: "page"
-        in: "query"
-        description: "Page number."
-        required: false
-        type: "integer"
-        x-exportParamName: "Page"
-        x-optionalDataType: "Int32"
-      - name: "per_page"
-        in: "query"
-        description: "Number of items per page. Defaults to 30."
-        required: false
-        type: "integer"
-        default: 30
-        x-exportParamName: "PerPage"
-        x-optionalDataType: "Int32"
-      responses:
-        200:
-          description: "Representation of a segment leaderboard."
-          examples:
-            application/json:
-              effort_count: 30756
-              entry_count: 30756
-              kom_type: "kom"
-              entries:
-              - athlete_name: "Peter S."
-                elapsed_time: 346
-                moving_time: 346
-                start_date: "1993-04-03T15:37:43Z"
-                start_date_local: "1993-04-03T07:37:43Z"
-                rank: 1
-          schema:
-            $ref: "#/definitions/SegmentLeaderboard"
         default:
           description: "Unexpected error."
           schema:
@@ -751,7 +616,7 @@ paths:
       - "SegmentEfforts"
       summary: "Get Segment Effort"
       description: "Returns a segment effort from an activity that is owned by the\
-        \ authenticated athlete."
+        \ authenticated athlete. Requires subscription."
       operationId: "getSegmentEffortById"
       parameters:
       - name: "id"
@@ -1420,7 +1285,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "page"
         in: "query"
-        description: "Page number."
+        description: "Page number. Defaults to 1."
         required: false
         type: "integer"
         x-exportParamName: "Page"
@@ -1642,7 +1507,7 @@ paths:
         x-exportParamName: "Id"
       - name: "page"
         in: "query"
-        description: "Page number."
+        description: "Page number. Defaults to 1."
         required: false
         type: "integer"
         x-exportParamName: "Page"
@@ -1695,7 +1560,7 @@ paths:
         x-exportParamName: "Id"
       - name: "page"
         in: "query"
-        description: "Page number."
+        description: "Page number. Defaults to 1."
         required: false
         type: "integer"
         x-exportParamName: "Page"
@@ -1788,7 +1653,7 @@ paths:
         x-exportParamName: "Id"
       - name: "page"
         in: "query"
-        description: "Page number."
+        description: "Page number. Defaults to 1."
         required: false
         type: "integer"
         x-exportParamName: "Page"
@@ -1836,7 +1701,7 @@ paths:
         x-exportParamName: "Id"
       - name: "page"
         in: "query"
-        description: "Page number."
+        description: "Page number. Defaults to 1."
         required: false
         type: "integer"
         x-exportParamName: "Page"
@@ -1884,7 +1749,7 @@ paths:
         x-exportParamName: "Id"
       - name: "page"
         in: "query"
-        description: "Page number."
+        description: "Page number. Defaults to 1."
         required: false
         type: "integer"
         x-exportParamName: "Page"
@@ -1932,7 +1797,7 @@ paths:
       parameters:
       - name: "page"
         in: "query"
-        description: "Page number."
+        description: "Page number. Defaults to 1."
         required: false
         type: "integer"
         x-exportParamName: "Page"
@@ -2049,7 +1914,7 @@ paths:
         x-exportParamName: "Id"
       - name: "page"
         in: "query"
-        description: "Page number."
+        description: "Page number. Defaults to 1."
         required: false
         type: "integer"
         x-exportParamName: "Page"
@@ -3035,54 +2900,6 @@ definitions:
       summary_polyline: "summary_polyline"
       id: "id"
       polyline: "polyline"
-  SegmentLeaderboard:
-    type: "object"
-    properties:
-      entry_count:
-        type: "integer"
-        example: 1993
-        description: "The total number of entries for this leaderboard"
-      effort_count:
-        type: "integer"
-        example: 1993
-        description: "Deprecated, use entry_count"
-      kom_type:
-        type: "string"
-        enum:
-        - "kom"
-        - "cr"
-      entries:
-        type: "array"
-        items:
-          $ref: "#/definitions/SegmentLeaderboardEntry"
-    description: "A"
-  SegmentLeaderboardEntry:
-    type: "object"
-    properties:
-      athlete_name:
-        type: "string"
-        example: "P. Sagan"
-        description: "The public name of the athlete"
-      elapsed_time:
-        type: "integer"
-        example: 100
-        description: "The elapsed of the segment effort associated with this entry"
-      moving_time:
-        type: "integer"
-        example: 80
-        description: "The moving of the segment effort associated with this entry"
-      start_date:
-        type: "string"
-        format: "date-time"
-        description: "The time at which the effort was started."
-      start_date_local:
-        type: "string"
-        format: "date-time"
-        description: "The time at which the effort was started in the local timezone."
-      rank:
-        type: "integer"
-        description: "The rank of this entry in the leaderboard"
-    description: "A row in a segment leaderboard"
   DetailedSegmentEffort:
     allOf:
     - $ref: "#/definitions/SummarySegmentEffort"
@@ -4003,7 +3820,7 @@ parameters:
   page:
     name: "page"
     in: "query"
-    description: "Page number."
+    description: "Page number. Defaults to 1."
     required: false
     type: "integer"
     x-exportParamName: "Page"

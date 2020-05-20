@@ -296,7 +296,7 @@ Returns a list of the routes created by the authenticated athlete using their at
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id The identifier of the athlete.
  * @param optional nil or *GetRoutesByAthleteIdOpts - Optional Parameters:
-     * @param "Page" (optional.Int32) -  Page number.
+     * @param "Page" (optional.Int32) -  Page number. Defaults to 1.
      * @param "PerPage" (optional.Int32) -  Number of items per page. Defaults to 30.
 
 @return []Route

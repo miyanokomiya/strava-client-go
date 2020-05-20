@@ -148,7 +148,7 @@ func (a *SegmentEffortsApiService) GetEffortsBySegmentId(ctx context.Context, se
 
 /* 
 SegmentEffortsApiService Get Segment Effort
-Returns a segment effort from an activity that is owned by the authenticated athlete.
+Returns a segment effort from an activity that is owned by the authenticated athlete. Requires subscription.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id The identifier of the segment effort.
 

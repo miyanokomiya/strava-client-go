@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 > DetailedSegmentEffort GetSegmentEffortById(ctx, id)
 Get Segment Effort
 
-Returns a segment effort from an activity that is owned by the authenticated athlete.
+Returns a segment effort from an activity that is owned by the authenticated athlete. Requires subscription.
 
 ### Required Parameters
 

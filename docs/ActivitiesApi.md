@@ -117,7 +117,7 @@ Optional parameters are passed through a pointer to a GetCommentsByActivityIdOpt
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **optional.Int32**| Page number. | 
+ **page** | **optional.Int32**| Page number. Defaults to 1. | 
  **perPage** | **optional.Int32**| Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
@@ -155,7 +155,7 @@ Optional parameters are passed through a pointer to a GetKudoersByActivityIdOpts
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **optional.Int32**| Page number. | 
+ **page** | **optional.Int32**| Page number. Defaults to 1. | 
  **perPage** | **optional.Int32**| Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **before** | **optional.Int32**| An epoch timestamp to use for filtering activities that have taken place before a certain time. | 
  **after** | **optional.Int32**| An epoch timestamp to use for filtering activities that have taken place after a certain time. | 
- **page** | **optional.Int32**| Page number. | 
+ **page** | **optional.Int32**| Page number. Defaults to 1. | 
  **perPage** | **optional.Int32**| Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type

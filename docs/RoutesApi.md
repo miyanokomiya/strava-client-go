@@ -114,7 +114,7 @@ Optional parameters are passed through a pointer to a GetRoutesByAthleteIdOpts s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **optional.Int32**| Page number. | 
+ **page** | **optional.Int32**| Page number. Defaults to 1. | 
  **perPage** | **optional.Int32**| Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
