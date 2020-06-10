@@ -15,7 +15,7 @@ import (
 
 type RunningRace struct {
 	// The unique identifier of this race.
-	Id int32 `json:"id,omitempty"`
+	Id int64 `json:"id,omitempty"`
 	// The name of this race.
 	Name string `json:"name,omitempty"`
 	// The type of this race.
@@ -31,7 +31,7 @@ type RunningRace struct {
 	// The name of the country in which the race is taking place.
 	Country string `json:"country,omitempty"`
 	// The set of routes that cover this race's course.
-	RouteIds []int32 `json:"route_ids,omitempty"`
+	RouteIds []int64 `json:"route_ids,omitempty"`
 	// The unit system in which the race should be displayed.
 	MeasurementPreference string `json:"measurement_preference,omitempty"`
 	// The vanity URL of this race on Strava.

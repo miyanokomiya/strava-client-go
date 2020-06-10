@@ -37,6 +37,7 @@ paths:
           \ athlete."
         required: true
         type: "integer"
+        format: "int64"
         x-exportParamName: "Id"
       responses:
         200:
@@ -694,6 +695,7 @@ paths:
         description: "The identifier of the running race."
         required: true
         type: "integer"
+        format: "int64"
         x-exportParamName: "Id"
       responses:
         200:
@@ -1476,6 +1478,7 @@ paths:
         description: "The identifier of the activity."
         required: true
         type: "integer"
+        format: "int64"
         x-exportParamName: "Id"
       responses:
         200:
@@ -1601,6 +1604,7 @@ paths:
         description: "The identifier of the club."
         required: true
         type: "integer"
+        format: "int64"
         x-exportParamName: "Id"
       responses:
         200:
@@ -1650,6 +1654,7 @@ paths:
         description: "The identifier of the club."
         required: true
         type: "integer"
+        format: "int64"
         x-exportParamName: "Id"
       - name: "page"
         in: "query"
@@ -1698,6 +1703,7 @@ paths:
         description: "The identifier of the club."
         required: true
         type: "integer"
+        format: "int64"
         x-exportParamName: "Id"
       - name: "page"
         in: "query"
@@ -1746,6 +1752,7 @@ paths:
         description: "The identifier of the club."
         required: true
         type: "integer"
+        format: "int64"
         x-exportParamName: "Id"
       - name: "page"
         in: "query"
@@ -1886,6 +1893,7 @@ paths:
         description: "The identifier of the route."
         required: true
         type: "integer"
+        format: "int64"
         x-exportParamName: "Id"
       responses:
         200:
@@ -1911,6 +1919,7 @@ paths:
         description: "The identifier of the athlete."
         required: true
         type: "integer"
+        format: "int64"
         x-exportParamName: "Id"
       - name: "page"
         in: "query"
@@ -1952,6 +1961,7 @@ paths:
         description: "The identifier of the route."
         required: true
         type: "integer"
+        format: "int64"
         x-exportParamName: "Id"
       responses:
         200:
@@ -1974,6 +1984,7 @@ paths:
         description: "The identifier of the route."
         required: true
         type: "integer"
+        format: "int64"
         x-exportParamName: "Id"
       responses:
         200:
@@ -2620,6 +2631,7 @@ definitions:
     properties:
       id:
         type: "integer"
+        format: "int64"
         description: "The unique identifier of the athlete"
   SummaryClub:
     allOf:
@@ -2670,6 +2682,7 @@ definitions:
     properties:
       id:
         type: "integer"
+        format: "int64"
         description: "The club's unique identifier."
       resource_state:
         type: "integer"
@@ -3025,6 +3038,7 @@ definitions:
     properties:
       id:
         type: "integer"
+        format: "int64"
         description: "The unique identifier of this race."
       name:
         type: "string"
@@ -3055,6 +3069,7 @@ definitions:
         description: "The set of routes that cover this race's course."
         items:
           type: "integer"
+          format: "int64"
       measurement_preference:
         type: "string"
         description: "The unit system in which the race should be displayed."
@@ -3532,7 +3547,11 @@ definitions:
         description: "The route's elevation gain."
       id:
         type: "integer"
+        format: "int64"
         description: "The unique identifier of this route"
+      id_str:
+        type: "string"
+        description: "The unique identifier of the route in string format"
       map:
         $ref: "#/definitions/PolylineMap"
       name:
@@ -3613,6 +3632,7 @@ definitions:
         state: "state"
       starred: true
       sub_type: 2
+      id_str: "id_str"
       name: "name"
       id: 1
       map:

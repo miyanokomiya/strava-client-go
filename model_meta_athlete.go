@@ -11,5 +11,5 @@ package strava
 
 type MetaAthlete struct {
 	// The unique identifier of the athlete
-	Id int32 `json:"id,omitempty"`
+	Id int64 `json:"id,omitempty"`
 }

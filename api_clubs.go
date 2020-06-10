@@ -43,7 +43,7 @@ type GetClubActivitiesByIdOpts struct {
 	PerPage optional.Int32
 }
 
-func (a *ClubsApiService) GetClubActivitiesById(ctx context.Context, id int32, localVarOptionals *GetClubActivitiesByIdOpts) ([]SummaryActivity, *http.Response, error) {
+func (a *ClubsApiService) GetClubActivitiesById(ctx context.Context, id int64, localVarOptionals *GetClubActivitiesByIdOpts) ([]SummaryActivity, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -158,7 +158,7 @@ type GetClubAdminsByIdOpts struct {
 	PerPage optional.Int32
 }
 
-func (a *ClubsApiService) GetClubAdminsById(ctx context.Context, id int32, localVarOptionals *GetClubAdminsByIdOpts) ([]SummaryAthlete, *http.Response, error) {
+func (a *ClubsApiService) GetClubAdminsById(ctx context.Context, id int64, localVarOptionals *GetClubAdminsByIdOpts) ([]SummaryAthlete, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -264,7 +264,7 @@ Returns a given club using its identifier.
 
 @return DetailedClub
 */
-func (a *ClubsApiService) GetClubById(ctx context.Context, id int32) (DetailedClub, *http.Response, error) {
+func (a *ClubsApiService) GetClubById(ctx context.Context, id int64) (DetailedClub, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -373,7 +373,7 @@ type GetClubMembersByIdOpts struct {
 	PerPage optional.Int32
 }
 
-func (a *ClubsApiService) GetClubMembersById(ctx context.Context, id int32, localVarOptionals *GetClubMembersByIdOpts) ([]SummaryAthlete, *http.Response, error) {
+func (a *ClubsApiService) GetClubMembersById(ctx context.Context, id int64, localVarOptionals *GetClubMembersByIdOpts) ([]SummaryAthlete, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}

@@ -69,7 +69,7 @@ Returns the activity stats of an athlete. Only includes data from activities set
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| The identifier of the athlete. Must match the authenticated athlete. | 
+  **id** | **int64**| The identifier of the athlete. Must match the authenticated athlete. | 
 
 ### Return type
 

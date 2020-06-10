@@ -21,7 +21,7 @@ Returns a GPX file of the route. Requires read_all scope for private routes.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| The identifier of the route. | 
+  **id** | **int64**| The identifier of the route. | 
 
 ### Return type
 
@@ -49,7 +49,7 @@ Returns a TCX file of the route. Requires read_all scope for private routes.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| The identifier of the route. | 
+  **id** | **int64**| The identifier of the route. | 
 
 ### Return type
 
@@ -77,7 +77,7 @@ Returns a route using its identifier. Requires read_all scope for private routes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| The identifier of the route. | 
+  **id** | **int64**| The identifier of the route. | 
 
 ### Return type
 
@@ -105,7 +105,7 @@ Returns a list of the routes created by the authenticated athlete using their at
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| The identifier of the athlete. | 
+  **id** | **int64**| The identifier of the athlete. | 
  **optional** | ***GetRoutesByAthleteIdOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters

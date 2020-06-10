@@ -64,7 +64,8 @@
             "in": "path",
             "description": "The identifier of the athlete. Must match the authenticated athlete.",
             "required": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         ],
         "tags": [
@@ -876,7 +877,8 @@
             "in": "path",
             "description": "The identifier of the running race.",
             "required": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         ],
         "tags": [
@@ -1788,7 +1790,8 @@
             "in": "path",
             "description": "The identifier of the activity.",
             "required": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         ],
         "tags": [
@@ -1935,7 +1938,8 @@
             "in": "path",
             "description": "The identifier of the club.",
             "required": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         ],
         "tags": [
@@ -1996,7 +2000,8 @@
             "in": "path",
             "description": "The identifier of the club.",
             "required": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           {
             "$ref": "#/parameters/page"
@@ -2050,7 +2055,8 @@
             "in": "path",
             "description": "The identifier of the club.",
             "required": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           {
             "$ref": "#/parameters/page"
@@ -2101,7 +2107,8 @@
             "in": "path",
             "description": "The identifier of the club.",
             "required": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           {
             "$ref": "#/parameters/page"
@@ -2264,7 +2271,8 @@
             "in": "path",
             "description": "The identifier of the route.",
             "required": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         ],
         "tags": [
@@ -2297,7 +2305,8 @@
             "in": "path",
             "description": "The identifier of the athlete.",
             "required": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           {
             "$ref": "#/parameters/page"
@@ -2339,7 +2348,8 @@
             "in": "path",
             "description": "The identifier of the route.",
             "required": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         ],
         "tags": [
@@ -2377,7 +2387,8 @@
             "in": "path",
             "description": "The identifier of the route.",
             "required": true,
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           }
         ],
         "tags": [

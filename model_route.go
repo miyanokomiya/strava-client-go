@@ -18,7 +18,9 @@ type Route struct {
 	// The route's elevation gain.
 	ElevationGain float32 `json:"elevation_gain,omitempty"`
 	// The unique identifier of this route
-	Id int32 `json:"id,omitempty"`
+	Id int64 `json:"id,omitempty"`
+	// The unique identifier of the route in string format
+	IdStr string `json:"id_str,omitempty"`
 	Map_ *PolylineMap `json:"map,omitempty"`
 	// The name of this route
 	Name string `json:"name,omitempty"`

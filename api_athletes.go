@@ -229,7 +229,7 @@ Returns the activity stats of an athlete. Only includes data from activities set
 
 @return ActivityStats
 */
-func (a *AthletesApiService) GetStats(ctx context.Context, id int32) (ActivityStats, *http.Response, error) {
+func (a *AthletesApiService) GetStats(ctx context.Context, id int64) (ActivityStats, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}

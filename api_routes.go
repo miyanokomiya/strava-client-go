@@ -34,7 +34,7 @@ Returns a GPX file of the route. Requires read_all scope for private routes.
 
 
 */
-func (a *RoutesApiService) GetRouteAsGPX(ctx context.Context, id int32) (*http.Response, error) {
+func (a *RoutesApiService) GetRouteAsGPX(ctx context.Context, id int64) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -116,7 +116,7 @@ Returns a TCX file of the route. Requires read_all scope for private routes.
 
 
 */
-func (a *RoutesApiService) GetRouteAsTCX(ctx context.Context, id int32) (*http.Response, error) {
+func (a *RoutesApiService) GetRouteAsTCX(ctx context.Context, id int64) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -198,7 +198,7 @@ Returns a route using its identifier. Requires read_all scope for private routes
 
 @return Route
 */
-func (a *RoutesApiService) GetRouteById(ctx context.Context, id int32) (Route, *http.Response, error) {
+func (a *RoutesApiService) GetRouteById(ctx context.Context, id int64) (Route, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -307,7 +307,7 @@ type GetRoutesByAthleteIdOpts struct {
 	PerPage optional.Int32
 }
 
-func (a *RoutesApiService) GetRoutesByAthleteId(ctx context.Context, id int32, localVarOptionals *GetRoutesByAthleteIdOpts) ([]Route, *http.Response, error) {
+func (a *RoutesApiService) GetRoutesByAthleteId(ctx context.Context, id int64, localVarOptionals *GetRoutesByAthleteIdOpts) ([]Route, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}

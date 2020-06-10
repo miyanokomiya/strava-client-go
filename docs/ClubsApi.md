@@ -22,7 +22,7 @@ Retrieve recent activities from members of a specific club. The authenticated at
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| The identifier of the club. | 
+  **id** | **int64**| The identifier of the club. | 
  **optional** | ***GetClubActivitiesByIdOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -60,7 +60,7 @@ Returns a list of the administrators of a given club.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| The identifier of the club. | 
+  **id** | **int64**| The identifier of the club. | 
  **optional** | ***GetClubAdminsByIdOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -98,7 +98,7 @@ Returns a given club using its identifier.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| The identifier of the club. | 
+  **id** | **int64**| The identifier of the club. | 
 
 ### Return type
 
@@ -126,7 +126,7 @@ Returns a list of the athletes who are members of a given club.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| The identifier of the club. | 
+  **id** | **int64**| The identifier of the club. | 
  **optional** | ***GetClubMembersByIdOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters

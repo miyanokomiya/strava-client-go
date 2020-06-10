@@ -11,7 +11,7 @@ package strava
 
 type MetaClub struct {
 	// The club's unique identifier.
-	Id int32 `json:"id,omitempty"`
+	Id int64 `json:"id,omitempty"`
 	// Resource state, indicates level of detail. Possible values: 1 -> \"meta\", 2 -> \"summary\", 3 -> \"detail\"
 	ResourceState int32 `json:"resource_state,omitempty"`
 	// The club's name.

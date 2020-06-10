@@ -729,7 +729,7 @@ Summit Feature. Returns the zones of a given activity. Requires activity:read fo
 
 @return []ActivityZone
 */
-func (a *ActivitiesApiService) GetZonesByActivityId(ctx context.Context, id int32) ([]ActivityZone, *http.Response, error) {
+func (a *ActivitiesApiService) GetZonesByActivityId(ctx context.Context, id int64) ([]ActivityZone, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}

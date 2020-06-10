@@ -250,7 +250,7 @@ Summit Feature. Returns the zones of a given activity. Requires activity:read fo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| The identifier of the activity. | 
+  **id** | **int64**| The identifier of the activity. | 
 
 ### Return type
 

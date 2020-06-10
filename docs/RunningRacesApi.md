@@ -19,7 +19,7 @@ Returns a running race for a given identifier.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| The identifier of the running race. | 
+  **id** | **int64**| The identifier of the running race. | 
 
 ### Return type
 

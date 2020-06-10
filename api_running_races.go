@@ -34,7 +34,7 @@ Returns a running race for a given identifier.
 
 @return RunningRace
 */
-func (a *RunningRacesApiService) GetRunningRaceById(ctx context.Context, id int32) (RunningRace, *http.Response, error) {
+func (a *RunningRacesApiService) GetRunningRaceById(ctx context.Context, id int64) (RunningRace, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
