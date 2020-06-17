@@ -443,7 +443,7 @@ paths:
       - "SegmentEfforts"
       summary: "List Segment Efforts"
       description: "Returns a set of the authenticated athlete's segment efforts for\
-        \ a given segment."
+        \ a given segment.  Requires subscription."
       operationId: "getEffortsBySegmentId"
       parameters:
       - name: "segment_id"

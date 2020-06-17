@@ -28,7 +28,7 @@ type SegmentEffortsApiService service
 
 /* 
 SegmentEffortsApiService List Segment Efforts
-Returns a set of the authenticated athlete&#39;s segment efforts for a given segment.
+Returns a set of the authenticated athlete&#39;s segment efforts for a given segment.  Requires subscription.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param segmentId The identifier of the segment.
  * @param optional nil or *GetEffortsBySegmentIdOpts - Optional Parameters:

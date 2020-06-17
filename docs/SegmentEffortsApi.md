@@ -12,7 +12,7 @@ Method | HTTP request | Description
 > []DetailedSegmentEffort GetEffortsBySegmentId(ctx, segmentId, optional)
 List Segment Efforts
 
-Returns a set of the authenticated athlete's segment efforts for a given segment.
+Returns a set of the authenticated athlete's segment efforts for a given segment.  Requires subscription.
 
 ### Required Parameters
 

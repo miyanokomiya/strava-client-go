@@ -579,7 +579,7 @@
       "get": {
         "operationId": "getEffortsBySegmentId",
         "summary": "List Segment Efforts",
-        "description": "Returns a set of the authenticated athlete's segment efforts for a given segment.",
+        "description": "Returns a set of the authenticated athlete's segment efforts for a given segment.  Requires subscription.",
         "parameters": [
           {
             "name": "segment_id",
