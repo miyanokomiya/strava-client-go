@@ -9,6 +9,10 @@
 
 package strava
 
+import (
+	"time"
+)
+
 type Route struct {
 	Athlete *SummaryAthlete `json:"athlete,omitempty"`
 	// The description of the route
@@ -34,6 +38,12 @@ type Route struct {
 	Type_ int32 `json:"type,omitempty"`
 	// This route's sub-type (1 for road, 2 for mountain bike, 3 for cross, 4 for trail, 5 for mixed)
 	SubType int32 `json:"sub_type,omitempty"`
+	// The time at which the route was created
+	CreatedAt time.Time `json:"created_at,omitempty"`
+	// The time at which the route was last updated
+	UpdatedAt time.Time `json:"updated_at,omitempty"`
+	// Estimated time in seconds for the authenticated athlete to complete route
+	EstimatedMovingTime int32 `json:"estimated_moving_time,omitempty"`
 	// The segments traversed by this route
 	Segments []SummarySegment `json:"segments,omitempty"`
 }

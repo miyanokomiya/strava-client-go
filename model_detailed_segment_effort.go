@@ -16,6 +16,8 @@ import (
 type DetailedSegmentEffort struct {
 	// The unique identifier of this effort
 	Id int64 `json:"id,omitempty"`
+	// The unique identifier of the activity related to this effort
+	ActivityId int64 `json:"activity_id,omitempty"`
 	// The effort's elapsed time
 	ElapsedTime int32 `json:"elapsed_time,omitempty"`
 	// The time at which the effort was started.

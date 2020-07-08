@@ -1909,18 +1909,11 @@ paths:
       tags:
       - "Routes"
       summary: "List Athlete Routes"
-      description: "Returns a list of the routes created by the authenticated athlete\
-        \ using their athlete ID. Private routes are filtered out unless requested\
-        \ by a token with read_all scope."
+      description: "Returns a list of the routes created by the authenticated athlete.\
+        \ Private routes are filtered out unless requested by a token with read_all\
+        \ scope."
       operationId: "getRoutesByAthleteId"
       parameters:
-      - name: "id"
-        in: "path"
-        description: "The identifier of the athlete."
-        required: true
-        type: "integer"
-        format: "int64"
-        x-exportParamName: "Id"
       - name: "page"
         in: "query"
         description: "Page number. Defaults to 1."
@@ -2832,28 +2825,36 @@ definitions:
         description: "Whether this segment is private."
       athlete_pr_effort:
         $ref: "#/definitions/SummarySegmentEffort"
+      athlete_segment_stats:
+        $ref: "#/definitions/SummaryPRSegmentEffort"
     example:
       country: "country"
       private: true
-      distance: 9.301444
-      average_grade: 3.6160767
-      maximum_grade: 2.027123
+      distance: 3.6160767
+      average_grade: 2.027123
+      maximum_grade: 4.145608
       climb_category: 1
       city: "city"
-      elevation_high: 4.145608
+      elevation_high: 7.386282
       athlete_pr_effort:
-        distance: 6.846853
+        distance: 1.1730742
         start_date_local: "2000-01-23T04:56:07.000+00:00"
-        elapsed_time: 1
+        activity_id: 6
+        elapsed_time: 7
         is_kom: true
         id: 1
         start_date: "2000-01-23T04:56:07.000+00:00"
+      athlete_segment_stats:
+        pr_elapsed_time: 5
+        pr_date: "2000-01-23T04:56:07.000+00:00"
+        effort_count: 9
+        pr_activity_id: 4
       start_latlng: ""
-      elevation_low: 7.386282
+      elevation_low: 1.2315135
       end_latlng: ""
       activity_type: "Ride"
       name: "name"
-      id: 7
+      id: 9
       state: "state"
   LatLng:
     type: "array"
@@ -2871,6 +2872,10 @@ definitions:
         type: "integer"
         format: "int64"
         description: "The unique identifier of this effort"
+      activity_id:
+        type: "integer"
+        format: "int64"
+        description: "The unique identifier of the activity related to this effort"
       elapsed_time:
         type: "integer"
         description: "The effort's elapsed time"
@@ -2890,12 +2895,35 @@ definitions:
         type: "boolean"
         description: "Whether this effort is the current best on the leaderboard"
     example:
-      distance: 6.846853
+      distance: 1.1730742
       start_date_local: "2000-01-23T04:56:07.000+00:00"
-      elapsed_time: 1
+      activity_id: 6
+      elapsed_time: 7
       is_kom: true
       id: 1
       start_date: "2000-01-23T04:56:07.000+00:00"
+  SummaryPRSegmentEffort:
+    type: "object"
+    properties:
+      pr_activity_id:
+        type: "integer"
+        format: "int64"
+        description: "The unique identifier of the activity related to the PR effort."
+      pr_elapsed_time:
+        type: "integer"
+        description: "The elapsed time ot the PR effort."
+      pr_date:
+        type: "string"
+        format: "date-time"
+        description: "The time at which the PR effort was started."
+      effort_count:
+        type: "integer"
+        description: "Number of efforts by the authenticated athlete on this segment."
+    example:
+      pr_elapsed_time: 5
+      pr_date: "2000-01-23T04:56:07.000+00:00"
+      effort_count: 9
+      pr_activity_id: 4
   PolylineMap:
     type: "object"
     properties:
@@ -3573,6 +3601,18 @@ definitions:
         type: "integer"
         description: "This route's sub-type (1 for road, 2 for mountain bike, 3 for\
           \ cross, 4 for trail, 5 for mixed)"
+      created_at:
+        type: "string"
+        format: "date-time"
+        description: "The time at which the route was created"
+      updated_at:
+        type: "string"
+        format: "date-time"
+        description: "The time at which the route was last updated"
+      estimated_moving_time:
+        type: "integer"
+        description: "Estimated time in seconds for the authenticated athlete to complete\
+          \ route"
       segments:
         type: "array"
         description: "The segments traversed by this route"
@@ -3583,54 +3623,69 @@ definitions:
       distance: 0.8008282
       athlete: ""
       description: "description"
+      created_at: "2000-01-23T04:56:07.000+00:00"
       elevation_gain: 6.0274563
       type: 5
+      estimated_moving_time: 7
       segments:
       - country: "country"
         private: true
-        distance: 9.301444
-        average_grade: 3.6160767
-        maximum_grade: 2.027123
+        distance: 3.6160767
+        average_grade: 2.027123
+        maximum_grade: 4.145608
         climb_category: 1
         city: "city"
-        elevation_high: 4.145608
+        elevation_high: 7.386282
         athlete_pr_effort:
-          distance: 6.846853
+          distance: 1.1730742
           start_date_local: "2000-01-23T04:56:07.000+00:00"
-          elapsed_time: 1
+          activity_id: 6
+          elapsed_time: 7
           is_kom: true
           id: 1
           start_date: "2000-01-23T04:56:07.000+00:00"
+        athlete_segment_stats:
+          pr_elapsed_time: 5
+          pr_date: "2000-01-23T04:56:07.000+00:00"
+          effort_count: 9
+          pr_activity_id: 4
         start_latlng: ""
-        elevation_low: 7.386282
+        elevation_low: 1.2315135
         end_latlng: ""
         activity_type: "Ride"
         name: "name"
-        id: 7
+        id: 9
         state: "state"
       - country: "country"
         private: true
-        distance: 9.301444
-        average_grade: 3.6160767
-        maximum_grade: 2.027123
+        distance: 3.6160767
+        average_grade: 2.027123
+        maximum_grade: 4.145608
         climb_category: 1
         city: "city"
-        elevation_high: 4.145608
+        elevation_high: 7.386282
         athlete_pr_effort:
-          distance: 6.846853
+          distance: 1.1730742
           start_date_local: "2000-01-23T04:56:07.000+00:00"
-          elapsed_time: 1
+          activity_id: 6
+          elapsed_time: 7
           is_kom: true
           id: 1
           start_date: "2000-01-23T04:56:07.000+00:00"
+        athlete_segment_stats:
+          pr_elapsed_time: 5
+          pr_date: "2000-01-23T04:56:07.000+00:00"
+          effort_count: 9
+          pr_activity_id: 4
         start_latlng: ""
-        elevation_low: 7.386282
+        elevation_low: 1.2315135
         end_latlng: ""
         activity_type: "Ride"
         name: "name"
-        id: 7
+        id: 9
         state: "state"
       starred: true
+      updated_at: "2000-01-23T04:56:07.000+00:00"
       sub_type: 2
       id_str: "id_str"
       name: "name"

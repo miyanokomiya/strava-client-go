@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Country** | **string** | The segment&#39;s country. | [optional] [default to null]
 **Private** | **bool** | Whether this segment is private. | [optional] [default to null]
 **AthletePrEffort** | [***SummarySegmentEffort**](SummarySegmentEffort.md) |  | [optional] [default to null]
+**AthleteSegmentStats** | [***SummaryPrSegmentEffort**](SummaryPRSegmentEffort.md) |  | [optional] [default to null]
 **CreatedAt** | [**time.Time**](time.Time.md) | The time at which the segment was created. | [optional] [default to null]
 **UpdatedAt** | [**time.Time**](time.Time.md) | The time at which the segment was last updated. | [optional] [default to null]
 **TotalElevationGain** | **float32** | The segment&#39;s total elevation gain. | [optional] [default to null]

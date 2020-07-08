@@ -13,19 +13,13 @@ import (
 	"time"
 )
 
-type SummarySegmentEffort struct {
-	// The unique identifier of this effort
-	Id int64 `json:"id,omitempty"`
-	// The unique identifier of the activity related to this effort
-	ActivityId int64 `json:"activity_id,omitempty"`
-	// The effort's elapsed time
-	ElapsedTime int32 `json:"elapsed_time,omitempty"`
-	// The time at which the effort was started.
-	StartDate time.Time `json:"start_date,omitempty"`
-	// The time at which the effort was started in the local timezone.
-	StartDateLocal time.Time `json:"start_date_local,omitempty"`
-	// The effort's distance in meters
-	Distance float32 `json:"distance,omitempty"`
-	// Whether this effort is the current best on the leaderboard
-	IsKom bool `json:"is_kom,omitempty"`
+type SummaryPrSegmentEffort struct {
+	// The unique identifier of the activity related to the PR effort.
+	PrActivityId int64 `json:"pr_activity_id,omitempty"`
+	// The elapsed time ot the PR effort.
+	PrElapsedTime int32 `json:"pr_elapsed_time,omitempty"`
+	// The time at which the PR effort was started.
+	PrDate time.Time `json:"pr_date,omitempty"`
+	// Number of efforts by the authenticated athlete on this segment.
+	EffortCount int32 `json:"effort_count,omitempty"`
 }

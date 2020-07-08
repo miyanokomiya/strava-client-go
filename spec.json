@@ -2298,16 +2298,8 @@
       "get": {
         "operationId": "getRoutesByAthleteId",
         "summary": "List Athlete Routes",
-        "description": "Returns a list of the routes created by the authenticated athlete using their athlete ID. Private routes are filtered out unless requested by a token with read_all scope.",
+        "description": "Returns a list of the routes created by the authenticated athlete. Private routes are filtered out unless requested by a token with read_all scope.",
         "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The identifier of the athlete.",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
           {
             "$ref": "#/parameters/page"
           },

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Country** | **string** | The segment&#39;s country. | [optional] [default to null]
 **Private** | **bool** | Whether this segment is private. | [optional] [default to null]
 **AthletePrEffort** | [***SummarySegmentEffort**](SummarySegmentEffort.md) |  | [optional] [default to null]
+**AthleteSegmentStats** | [***SummaryPrSegmentEffort**](SummaryPRSegmentEffort.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

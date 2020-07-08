@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int64** | The unique identifier of this effort | [optional] [default to null]
+**ActivityId** | **int64** | The unique identifier of the activity related to this effort | [optional] [default to null]
 **ElapsedTime** | **int32** | The effort&#39;s elapsed time | [optional] [default to null]
 **StartDate** | [**time.Time**](time.Time.md) | The time at which the effort was started. | [optional] [default to null]
 **StartDateLocal** | [**time.Time**](time.Time.md) | The time at which the effort was started in the local timezone. | [optional] [default to null]

@@ -292,9 +292,8 @@ func (a *RoutesApiService) GetRouteById(ctx context.Context, id int64) (Route, *
 
 /* 
 RoutesApiService List Athlete Routes
-Returns a list of the routes created by the authenticated athlete using their athlete ID. Private routes are filtered out unless requested by a token with read_all scope.
+Returns a list of the routes created by the authenticated athlete. Private routes are filtered out unless requested by a token with read_all scope.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param id The identifier of the athlete.
  * @param optional nil or *GetRoutesByAthleteIdOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Page number. Defaults to 1.
      * @param "PerPage" (optional.Int32) -  Number of items per page. Defaults to 30.
@@ -307,7 +306,7 @@ type GetRoutesByAthleteIdOpts struct {
 	PerPage optional.Int32
 }
 
-func (a *RoutesApiService) GetRoutesByAthleteId(ctx context.Context, id int64, localVarOptionals *GetRoutesByAthleteIdOpts) ([]Route, *http.Response, error) {
+func (a *RoutesApiService) GetRoutesByAthleteId(ctx context.Context, localVarOptionals *GetRoutesByAthleteIdOpts) ([]Route, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -318,7 +317,6 @@ func (a *RoutesApiService) GetRoutesByAthleteId(ctx context.Context, id int64, l
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/athletes/{id}/routes"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

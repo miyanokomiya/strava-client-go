@@ -38,4 +38,5 @@ type SummarySegment struct {
 	// Whether this segment is private.
 	Private bool `json:"private,omitempty"`
 	AthletePrEffort *SummarySegmentEffort `json:"athlete_pr_effort,omitempty"`
+	AthleteSegmentStats *SummaryPrSegmentEffort `json:"athlete_segment_stats,omitempty"`
 }

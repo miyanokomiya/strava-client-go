@@ -95,17 +95,16 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetRoutesByAthleteId**
-> []Route GetRoutesByAthleteId(ctx, id, optional)
+> []Route GetRoutesByAthleteId(ctx, optional)
 List Athlete Routes
 
-Returns a list of the routes created by the authenticated athlete using their athlete ID. Private routes are filtered out unless requested by a token with read_all scope.
+Returns a list of the routes created by the authenticated athlete. Private routes are filtered out unless requested by a token with read_all scope.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int64**| The identifier of the athlete. | 
  **optional** | ***GetRoutesByAthleteIdOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -113,7 +112,6 @@ Optional parameters are passed through a pointer to a GetRoutesByAthleteIdOpts s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **page** | **optional.Int32**| Page number. Defaults to 1. | 
  **perPage** | **optional.Int32**| Number of items per page. Defaults to 30. | [default to 30]
 
